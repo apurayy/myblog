@@ -59,6 +59,23 @@
             }
         } 
 
+        public function display_category(){
+            $query = "SELECT * FROM category";
+            $sql = mysqli_query($this->conn, $query);
+
+            if($sql){
+                $category = $sql;
+                return $category;
+            }
+        }
+
+        public function delet_category($id){
+            $query = "DELETE FROM category WHERE cat_id=$id";
+            if(mysqli_query($this->conn, $query)){
+                return "Delete Category Successfull";
+            }
+        }
+
     }
 
 ?>

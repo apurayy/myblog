@@ -1,4 +1,11 @@
-<?php include_once("include/head.php")?>
+<?php 
+  include_once("include/head.php");
+  include("admin/class/function.php");
+
+  $obj = new adminBlog();
+  $getcat = $obj->display_category();
+
+?>
 
   <body>
     <!-- ***** Preloader Start ***** -->

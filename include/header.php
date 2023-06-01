@@ -1,7 +1,7 @@
 <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="index.html"><h2>Stand Blog<em>.</em></h2></a>
+          <a class="navbar-brand" href="index.php"><h2>Skill Academy<em>.</em></h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -10,12 +10,12 @@
 
             <?php while($category = mysqli_fetch_assoc($getcat)){ ?>
               <li class="nav-item active">
-                <a class="nav-link" href="index.html"><?php echo $category['cat_name'] ?></a>
+                <a class="nav-link" href=""><?php echo $category['cat_name'] ?></a>
               </li> 
               <?php } ?>
 
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
+                <a class="nav-link" href="">Contact Us</a>
               </li>
             </ul>
           </div>

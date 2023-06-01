@@ -76,6 +76,44 @@
             }
         }
 
+        public function add_post($data){
+            $post_title = $data['post_title'];
+            $post_content = $data['post_content'];
+            $post_img = $_FILES['post_img']['name'];
+            $post_img_tmp = $_FILES['post_img']['tmp_name'];
+            $post_cat = $data['post_cat'];
+            $post_sumary = $data['post_sumary'];
+            $post_tag = $data['post_tag'];
+            $post_status = $data['post_status'];
+
+            $query = "INSERT INTO post_tab(post_title, post_content, post_img, post_cat, post_author, post_date, post_comment, post_sumary, post_tag, post_status) 
+            VALUES ('$post_title','$post_content','$post_img',$post_cat,'Apu',now(),3,'$post_sumary','$post_tag','$post_status')";
+
+            if(mysqli_query($this->conn, $query)){
+                move_uploaded_file($post_img_tmp, '../upload/'.$post_img);
+                return "Add Post Successfully!";
+            }
+        }
+
+
+        public function post_display(){
+            $query = "SELECT * FROM post_with_cat";
+
+            if(mysqli_query($this->conn, $query)){
+                $post = mysqli_query($this->conn, $query);
+                return $post;
+            }
+        }
+
+        public function post_display_publish(){
+            $query = "SELECT * FROM post_with_cat WHERE post_status=1";
+
+            if(mysqli_query($this->conn, $query)){
+                $post = mysqli_query($this->conn, $query);
+                return $post;
+            }
+        }
+
     }
 
 ?>

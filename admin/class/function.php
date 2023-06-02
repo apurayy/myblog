@@ -114,6 +114,29 @@
             }
         }
 
+        public function edit_img($data){
+            $id = $data['edit_img_id'];
+            $img_name = $_FILES['change_img']['name'];
+            $tmp_name = $_FILES['change_img']['tmp_name'];
+
+            $query = "UPDATE post_tab SET post_img='$img_name' WHERE post_id=$id";
+
+            if(mysqli_query($this->conn, $query)){
+                move_uploaded_file($tmp_name, '../upload/'.$img_name);
+                return "Update Images Successfully!";
+            }
+        }
+
+        public function post_info_data($id){
+            $query = "SELECT * FROM post_tab WHERE post_id=$id";
+
+            if(mysqli_query($this->conn, $query)){
+                $post_info = mysqli_query($this->conn, $query);
+                $post = mysqli_fetch_assoc($post_info);
+                return $post;
+            }
+        }
+
     }
 
 ?>

@@ -42,6 +42,12 @@
                                 elseif($view == "manage_post"){
                                     include("view/manage_post_view.php");
                                 }
+                                elseif($view == "edit_img"){
+                                    include("view/edit_img_view.php");
+                                }
+                                elseif($view == "edit_post"){
+                                    include("view/edit_post_view.php");
+                                }
                             }
                         ?>
                     </div>

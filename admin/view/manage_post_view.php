@@ -26,7 +26,11 @@
                 <td><?php echo $row['post_id'] ?></td>
                 <td><?php echo $row['post_title'] ?></td>
                 <td><?php echo $row['post_sumary'] ?></td>
-                <td><img height="100px" src="../upload/<?php echo $row['post_img'] ?>"></td>
+
+                <td><img height="100px" width="150px" src="../upload/<?php echo $row['post_img'] ?>">
+                    <a href="edit_img.php?status=editimg&&id=<?php echo $row['post_id'] ?>">Change</a>
+                </td>
+
                 <td><?php echo $row['cat_name'] ?></td>
                 <td><?php echo $row['post_author'] ?></td>
                 <td><?php echo $row['post_date'] ?></td>
@@ -36,7 +40,7 @@
                     echo "Unpublised";
                 } ?></td>
                 <td>
-                    <a class="btn btn-primary" href="#">Edit</a><br><br>
+                    <a class="btn btn-primary" href="edit_post.php?status=editpost$$id=<?php echo $row['post_id'] ?>">Edit</a><br><br>
                     <a class="btn btn-danger" href="#">Delete</a>
                 </td>
                 </tr>
